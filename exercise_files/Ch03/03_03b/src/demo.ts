@@ -16,7 +16,7 @@ interface Contact {
     status?: ContactStatus;
 }
 
-function toContact(nameOrContact) {
+function toContact(nameOrContact: string | Contact): Contact {
     if (typeof nameOrContact === "object") {
         return {
             id: nameOrContact.id,
@@ -32,3 +32,8 @@ function toContact(nameOrContact) {
         }
     }
 }
+
+const myType = { small:0, big: 10 }
+
+function save(source: typeof myType) {}
+
